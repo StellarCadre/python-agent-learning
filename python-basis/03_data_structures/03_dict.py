@@ -113,14 +113,14 @@ user2 = {"name": "Tom", "age": 18, "city": "北京"}
 
 # 遍历 key（默认遍历的就是 key）
 for key in user2:
-    print(key)
+    print(key) #结果是这几个key名
 
 for key in user2.keys():
-    print(key)
+    print(key) #结果是这几个key名
 
 # 遍历 value
 for value in user2.values():
-    print(value)
+    print(value) #结果是这几个key对应的value
 
 # 同时遍历 key 和 value（最常用！）
 for key, value in user2.items():
@@ -131,6 +131,7 @@ for key, value in user2.items():
 print(list(user2.keys()))            # ['name', 'age', 'city']
 print(list(user2.values()))          # ['Tom', 18, '北京']
 print(list(user2.items()))           # [('name', 'Tom'), ('age', 18), ('city', '北京')]
+
 
 # ---------- 6. 判断和统计 ----------
 
@@ -162,18 +163,19 @@ d4 = copy.deepcopy(d1)
 d4["b"].append(4)
 print(d1["b"])                       # [1, 2, 3]（不受影响）
 
-# ---------- 8. 实际应用小例子 ----------
 
+# ---------- 8. 实际应用小例子 ----------
+print("-----------------实际应用小例子------------------------")
 # 例子1：统计字符出现次数（Agent 处理文本时常用）
 text = "hello python"
 counter = {}
 for ch in text:
-    counter[ch] = counter.get(ch, 0) + 1
+    counter[ch] = counter.get(ch, 0) + 1  #
 print(counter)
 
 # 例子2：按条件过滤字典
 scores = {"Tom": 85, "Bob": 59, "Alice": 92, "David": 45}
-passed = {name: score for name, score in scores.items() if score >= 60}
+passed = {name_new: score_new for name, score in scores.items() if score >= 60} #先将scores中的内容解析到name和score上，然后再传给passed的name_new: score_new
 print(passed)                        # {'Tom': 85, 'Alice': 92}
 
 # 例子3：dict 和 JSON 天然对应（后面 JSON 章节详讲）

@@ -18,11 +18,11 @@
 # 传统 for 循环写法
 squares1 = []
 for x in range(5):
-    squares1.append(x * x)
+    squares1.append(x * x) #将解析得到的0/1/2/3/4，分别作为一次列表所添加的元素
 print(squares1)                      # [0, 1, 4, 9, 16]
 
 # 列表推导式写法（等价，更简洁）
-squares2 = [x * x for x in range(5)]
+squares2 = [x * x for x in range(5)]  #用于填充列表数据
 print(squares2)
 
 # 带条件过滤：[表达式 for ... if 条件]
@@ -31,11 +31,11 @@ print(evens)                        # [0, 2, 4, 6, 8]
 
 # 对字符串操作
 words = ["hello", "world", "python", "ai"]
-lengths = [len(w) for w in words]
+lengths = [len(w) for w in words] #每从words中解析出一个，就将其保存到w中。再对该w进行各种处理
 print(lengths)                      # [5, 5, 6, 2]
 
 upper_words = [w.upper() for w in words]
-print(upper_words)
+print(upper_words)  # ["HELLO", "WORLD", "PYTHON", "AI"]
 
 # 条件表达式（三元运算）放在结果位置
 labels = ["偶数" if x % 2 == 0 else "奇数" for x in range(5)]
@@ -70,6 +70,7 @@ print(transposed)                   # [[1,4,7],[2,5,8],[3,6,9]]
 # 坑：推导式不要写得太复杂，超过两层循环/多个条件时可读性差，
 # 这时应该用普通 for 循环。
 
+
 # ---------- 2. 字典推导式 ----------
 
 # 基本语法：{键表达式: 值表达式 for ... in ...}
@@ -100,6 +101,7 @@ config = {"Model": "gpt-4", "Temperature": 0.7}
 lower_config = {k.lower(): v for k, v in config.items()}
 print(lower_config)
 
+
 # ---------- 3. 集合推导式 ----------
 
 # 基本语法：{表达式 for ... in ...}
@@ -112,6 +114,7 @@ print(abs_values)                   # {1, 2, 3}
 # 字符串中字符集合
 chars = {ch for ch in "hello world" if ch != " "}
 print(chars)
+
 
 # ---------- 4. 生成器表达式 ----------
 # 语法和列表推导式一样，但用圆括号：(表达式 for ...)
@@ -152,6 +155,6 @@ print(gpt_models)
 
 # 例子3：词频统计（字典推导式配合）
 sentence = "the cat sat on the mat the cat"
-words = sentence.split()
-freq = {w: words.count(w) for w in set(words)}
+words = sentence.split() #去除空格，变为thecatsatonthematthecat
+freq = {w: words.count(w) for w in set(words)} #先转为集合进行去重，然后统计出现次数,并将结果放到字典中
 print(freq)

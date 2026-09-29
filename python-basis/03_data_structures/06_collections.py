@@ -118,6 +118,7 @@ for city, person in records:
     groups[city].append(person)
 print(dict(groups))
 
+
 # ---------- 3. OrderedDict 有序字典 ----------
 # Python 3.7 之前普通 dict 无序，OrderedDict 保证插入顺序
 # Python 3.7+ 普通 dict 也有序，OrderedDict 用得少了
